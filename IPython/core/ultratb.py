@@ -32,14 +32,13 @@ Give it a shot--you'll love it or you'll hate it.
   a while with cpu usage at 100%. If this occurs, you can cancel the traceback
   with Ctrl-C (maybe hitting it more than once).
 
-  If you encounter this kind of situation often, you may want to use the
-  Verbose_novars mode instead of the regular Verbose, which avoids formatting
-  variables (but otherwise includes the information and context given by
-  Verbose).
+  If this happens often, create the handler with
+  ``ultratb.VerboseTB(include_vars=False)`` to skip variable formatting while
+  retaining the rest of the verbose traceback information.
 
 .. note::
 
-  The verbose mode print all variables in the stack, which means it can
+  By default, the verbose mode prints all variables in the stack, which means it can
   potentially leak sensitive information like access keys, or unencrypted
   password.
 
